@@ -5,16 +5,16 @@ import re
 import pandas as pd
 
 def clear_fields():
-     hex_entry.delete(0, tk.END)
-     nnumber_entry.delete(0, tk.END)
-     airport_entry.delete(0, tk.END)
+    hex_entry.delete(0, tk.END)
+    nnumber_entry.delete(0, tk.END)
+    airport_entry.delete(0, tk.END)
 
 def add_to_csv():
     hex_id = hex_entry.get()
     n_number = nnumber_entry.get()
     airport_base = airport_entry.get()
 
-     # Strip non-alphanumeric characters from input fields
+    # Strip non-alphanumeric characters from input fields
     hex_id = re.sub('[^A-Za-z0-9]+', '', hex_id)
     n_number = re.sub('[^A-Za-z0-9]+', '', n_number)
     airport_base = re.sub('[^A-Za-z0-9]+', '', airport_base)
