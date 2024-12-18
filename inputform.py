@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 import re
+import pandas as pd
 
 def clear_fields():
      hex_entry.delete(0, tk.END)
@@ -35,6 +36,11 @@ def add_to_csv():
         writer.writerow([hex_id, n_number, airport_base])
 
     clear_fields()
+
+    # Sort CSV after each addition
+    df = pd.read_csv('data\\Lookup-NNumber-Airport.csv')
+    sorted_df = df.sort_values(by=list(df.columns))
+    sorted_df.to_csv('data\\Lookup-NNumber-Airport.csv', index=False)
 
 root = tk.Tk()
 root.title('Hex-NNumber-Airport input')
