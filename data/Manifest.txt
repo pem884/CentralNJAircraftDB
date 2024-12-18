@@ -1,0 +1,15 @@
+File: Lookup-NNumber-Airport.csv
+Description: Join the "Mode S Hex" ID of a transmitter to look up what airport that aircraft has been observed to use. This relationship is accomplished by human observation and manual entries into this file and thus represents a best guess.
+Fields:
+	hex_id (key)
+	n_number
+	airport_base (FAA LID)
+
+
+File: Lookup-Operator-Airport.csv
+Description: Join the owner field from FAA records to find a cleaned-up name, a representation of what that operator seems to do, and what airport that operator has been observed to use. This relationship is accomplished by human observation and investigation resulting in manual entries into this file and thus represents a best guess.
+Fields:
+	owner (key)
+	operator_name
+	operator_type
+	airport_base (FAA LID)
