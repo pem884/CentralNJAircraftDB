@@ -22,8 +22,16 @@ def add_to_csv():
         messagebox.showwarning("Empty fields", "Please fill all the fields")
         return
 
-    with open('data\\Lookup-NNumber-Airport.csv', 'a', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file, delimiter=',')
+    with open('data\\Lookup-NNumber-Airport.csv', 'r+', newline='', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        rows = list(reader)
+
+        for row in rows:
+            if row == [hex_id, n_number, airport_base]:
+                messagebox.showwarning("Duplicate entry", "This entry already exists.")
+                return
+
+        writer = csv.writer(file)
         writer.writerow([hex_id, n_number, airport_base])
 
     clear_fields()
