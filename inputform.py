@@ -28,11 +28,6 @@ def add_to_csv():
 
     clear_fields()
 
-def clear_fields():
-    hex_entry.delete(0, tk.END)
-    nnumber_entry.delete(0, tk.END)
-    airport_entry.delete(0, tk.END)
-
 root = tk.Tk()
 root.title('Hex-NNumber-Airport input')
 
