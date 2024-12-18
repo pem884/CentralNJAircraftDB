@@ -14,7 +14,7 @@ def add_to_csv():
     n_number = nnumber_entry.get()
     airport_base = airport_entry.get()
 
-    # Strip non-alphanumeric characters from input fields
+     # Strip non-alphanumeric characters from input fields
     hex_id = re.sub('[^A-Za-z0-9]+', '', hex_id)
     n_number = re.sub('[^A-Za-z0-9]+', '', n_number)
     airport_base = re.sub('[^A-Za-z0-9]+', '', airport_base)
