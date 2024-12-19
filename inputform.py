@@ -44,6 +44,7 @@ def add_to_csv():
 
 root = tk.Tk()
 root.title('Hex-NNumber-Airport input')
+root.geometry('200x180')
 
 hex_label = tk.Label(root, text="Hex ID:")
 hex_label.pack()
