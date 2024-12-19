@@ -15,9 +15,9 @@ def add_to_csv():
     airport_base = airport_entry.get()
 
     # Strip non-alphanumeric characters from input fields
-    hex_id = re.sub('[^A-Za-z0-9]+', '', hex_id)
-    n_number = re.sub('[^A-Za-z0-9]+', '', n_number)
-    airport_base = re.sub('[^A-Za-z0-9]+', '', airport_base)
+    hex_id = re.sub('[^A-Za-z0-9]+', '', hex_id).upper()
+    n_number = re.sub('[^A-Za-z0-9]+', '', n_number).upper()
+    airport_base = re.sub('[^A-Za-z0-9]+', '', airport_base).upper()
 
     if not (hex_id and n_number and airport_base):
         messagebox.showwarning("Empty fields", "Please fill all the fields")
