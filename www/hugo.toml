@@ -1,4 +1,0 @@
-baseURL = 'https://chic-rabanadas-5ed957.netlify.app/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
