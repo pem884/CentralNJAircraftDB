@@ -62,7 +62,8 @@ nnumber_entry.pack()
 airport_label = ttk.Label(root, text="Airport Base:")
 airport_label.pack()
 
-airport_entry = ttk.Entry(root)
+airport_entry = ttk.Combobox(root)
+airport_entry['values'] = ('BLM', 'CDW', 'N51', '39N', 'LDJ', 'SMQ', '47N')
 airport_entry.pack()
 
 add_button = ttk.Button(root, text="Add", command=add_to_csv)
