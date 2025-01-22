@@ -1,13 +1,14 @@
-import tkinter as tk
-from tkinter import messagebox
 import csv
 import re
+import tkinter
+from tkinter import messagebox
+from tkinter import ttk
 import pandas as pd
 
 def clear_fields():
-    hex_entry.delete(0, tk.END)
-    nnumber_entry.delete(0, tk.END)
-    airport_entry.delete(0, tk.END)
+    hex_entry.delete(0, tkinter.END)
+    nnumber_entry.delete(0, tkinter.END)
+    airport_entry.delete(0, tkinter.END)
 
 def add_to_csv():
     hex_id = hex_entry.get()
@@ -42,32 +43,32 @@ def add_to_csv():
     sorted_df = df.sort_values(by=list(df.columns))
     sorted_df.to_csv('data\\Lookup-NNumber-Airport.csv', index=False)
 
-root = tk.Tk()
+root = tkinter.Tk()
 root.title('Hex-NNumber-Airport input')
 root.geometry('200x180')
 
-hex_label = tk.Label(root, text="Hex ID:")
+hex_label = ttk.Label(root, text="Hex ID:")
 hex_label.pack()
 
-hex_entry = tk.Entry(root)
+hex_entry = ttk.Entry(root)
 hex_entry.pack()
 
-nnumber_label = tk.Label(root, text="N Number:")
+nnumber_label = ttk.Label(root, text="N Number:")
 nnumber_label.pack()
 
-nnumber_entry = tk.Entry(root)
+nnumber_entry = ttk.Entry(root)
 nnumber_entry.pack()
 
-airport_label = tk.Label(root, text="Airport Base:")
+airport_label = ttk.Label(root, text="Airport Base:")
 airport_label.pack()
 
-airport_entry = tk.Entry(root)
+airport_entry = ttk.Entry(root)
 airport_entry.pack()
 
-add_button = tk.Button(root, text="Add", command=add_to_csv)
+add_button = ttk.Button(root, text="Add", command=add_to_csv)
 add_button.pack()
 
-clear_button = tk.Button(root, text="Clear", command=clear_fields)
+clear_button = ttk.Button(root, text="Clear", command=clear_fields)
 clear_button.pack()
 
 root.mainloop()
