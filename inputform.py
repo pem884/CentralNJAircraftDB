@@ -3,6 +3,7 @@ import re
 import tkinter
 from tkinter import messagebox
 from tkinter import ttk
+from numpy import pad
 import pandas as pd
 
 def clear_fields():
@@ -45,7 +46,7 @@ def add_to_csv():
 
 root = tkinter.Tk()
 root.title('Hex-NNumber-Airport input')
-root.geometry('200x180')
+root.geometry('240x320')
 
 hex_label = ttk.Label(root, text="Hex ID:")
 hex_label.pack()
@@ -59,17 +60,23 @@ nnumber_label.pack()
 nnumber_entry = ttk.Entry(root)
 nnumber_entry.pack()
 
-airport_label = ttk.Label(root, text="Airport Base:")
-airport_label.pack()
+airport_labelframe = ttk.Labelframe(root, text="Airport Base")
+airport_labelframe.pack(pady=5)
 
-airport_entry = ttk.Combobox(root)
-airport_entry['values'] = ('BLM', 'CDW', 'N51', '39N', 'LDJ', 'SMQ', '47N')
+airport_entry = ttk.Combobox(airport_labelframe)
+airport_entry.config(values = ['BLM', 'CDW', 'N51', '39N', 'LDJ', 'SMQ', '47N'])
 airport_entry.pack()
 
-add_button = ttk.Button(root, text="Add", command=add_to_csv)
-add_button.pack()
+airport_label = ttk.Label(
+    airport_labelframe,
+    text="BLM = Monmouth Executive Airport\nCDW = Essex County Airport\nN51 = Solberg-Hunterdon Airport\n39N = Princeton Airport\nLDJ = Linden Airport\nSMQ = Somerset Airport\n47N = Central Jersey Regional Airport"
+)
+airport_label.pack()
 
 clear_button = ttk.Button(root, text="Clear", command=clear_fields)
-clear_button.pack()
+clear_button.pack(side="bottom", pady=5)
+
+add_button = ttk.Button(root, text="Add", command=add_to_csv)
+add_button.pack(side="bottom")
 
 root.mainloop()
