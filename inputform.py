@@ -3,7 +3,6 @@ import re
 import tkinter
 from tkinter import messagebox
 from tkinter import ttk
-from numpy import pad
 import pandas as pd
 
 def clear_fields():
